@@ -7,7 +7,7 @@ const Card = props => {
         const { name, flags, population, region, capital } = country;
         return (
           <div key={country.cca2} className="mb-10 rounded-md overflow-hidden w-64 shadow-lg bg-white lg:w-64 lg:mb-12">
-            <Link to="detail">
+            <Link to={`detail/${name.common}`}>
               <div className="h-40">
                 <img src={flags.png} alt={name.common} className="h-full w-full object-cover" />
               </div>

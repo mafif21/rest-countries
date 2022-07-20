@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 const Card = props => {
   return (
     <div className="px-5 grid grid-cols-1 justify-items-center mt-10 lg:grid-cols-4 lg:px-20">
+      {props.loading && <p>Loading...</p>}
       {props.countries.map(country => {
         const { name, flags, population, region, capital } = country;
         return (

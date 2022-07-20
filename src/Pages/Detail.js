@@ -31,16 +31,17 @@ const Detail = () => {
 
   return (
     <section>
-      <div className="px-5 mt-10 lg:px-20">
+      <div className="px-5 mt-10 lg:px-20 h-full lg:h-screen">
         <div className="bg-white shadow-md py-2 px-4 flex justify-between items-center w-1/3 rounded-md lg:w-36 lg:px-8">
           <FontAwesomeIcon icon={faArrowLeftLong} />
           <Link to="/">Back</Link>
         </div>
+        {loading && <p className="text-textIfLight mt-14">Loading...</p>}
         {datas.map(data => {
           const { flags, name, population, region, subregion, capital, tld, currencies, languages, borders } = data;
 
           return (
-            <div key={data.cca2} className="mt-14 grid grid-cols-1 lg:grid-cols-2 lg:mb-16">
+            <div key={data.cca2} className="mt-14 mb-16 grid grid-cols-1 lg:grid-cols-2 lg:mb-16">
               <div>
                 <img src={flags.png} alt={name.common} className="w-full h-64 lg:h-96 lg:max-w-lg" />
               </div>
@@ -51,40 +52,40 @@ const Detail = () => {
                 </div>
 
                 <div className="flex flex-col gap-y-10 lg:flex-row lg:justify-between">
-                  <div className="space-y-2 lg:text-lg text-gray-400 lg:space-y-3">
+                  <div className="space-y-2 lg:text-lg text-textIfLightDetail lg:space-y-3">
                     <p>
-                      <span className="text-black">Native Name: </span>
+                      <span className="text-textIfLight font-semibold">Native Name: </span>
                       {name.common}
                     </p>
                     <p>
-                      <span className="text-black">Population: </span>
+                      <span className="text-textIfLigh font-semibold">Population: </span>
                       {population}
                     </p>
                     <p>
-                      <span className="text-black">Region: </span>
+                      <span className="text-textIfLight font-semibold">Region: </span>
                       {region}
                     </p>
                     <p>
-                      <span className="text-black">Sub Region: </span>
+                      <span className="text-textIfLight font-semibold">Sub Region: </span>
                       {subregion}
                     </p>
                     <p>
-                      <span className="text-black">Capital: </span>
+                      <span className="text-textIfLight font-semibold">Capital: </span>
                       {capital}
                     </p>
                   </div>
 
-                  <div className="space-y-2 text-gray-400 lg:text-lg lg:space-y-3">
+                  <div className="space-y-2 ttext-textIfLightDetail lg:text-lg lg:space-y-3">
                     <p>
-                      <span className="text-black">Top Level Domain: </span>
+                      <span className="text-textIfLight font-semibold">Top Level Domain: </span>
                       {tld}
                     </p>
                     <p>
-                      <span className="text-black">Currencies: </span>
+                      <span className="text-textIfLight font-semibold">Currencies: </span>
                       {Object.keys(currencies)}
                     </p>
                     <p>
-                      <span className="text-black">Languages: </span>
+                      <span className="text-textIfLight font-semibold">Languages: </span>
                       {`${Object.values(languages)},`}
                     </p>
                   </div>

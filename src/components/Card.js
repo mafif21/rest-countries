@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 
 const Card = props => {
   return (
-    <div className="px-5 grid grid-cols-1 justify-items-center mt-10 lg:grid-cols-4 lg:px-20">
+    <div className={`px-5 grid grid-cols-1 ${props.loading ? "justify-items-start" : "justify-items-center"} mt-10 lg:grid-cols-4 lg:px-20`}>
       {props.loading && <p>Loading...</p>}
       {props.countries.map(country => {
         const { name, flags, population, region, capital } = country;
         return (
-          <div key={country.cca2} className="mb-10 rounded-md overflow-hidden w-64 shadow-lg bg-white lg:w-64 lg:mb-12">
+          <div key={country.cca2} className="mb-10 rounded-md overflow-hidden w-64 shadow-lg bg-white lg:w-64 lg:mb-12 dark:bg-elementDark dark:text-textIfDark">
             <Link to={`detail/${name.common}`}>
               <div className="h-40">
                 <img src={flags.png} alt={name.common} className="h-full w-full object-cover" />

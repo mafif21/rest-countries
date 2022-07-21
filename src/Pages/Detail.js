@@ -31,12 +31,12 @@ const Detail = () => {
 
   return (
     <section>
-      <div className="px-5 mt-10 lg:px-20 h-full lg:h-screen">
-        <div className="bg-white shadow-md py-2 px-4 flex justify-between items-center w-1/3 rounded-md lg:w-36 lg:px-8">
+      <div className="px-5 mt-10 lg:px-20">
+        <div className="shadow-md py-2 px-4 flex justify-between items-center w-1/3 rounded-md lg:w-36 lg:px-8 bg-white dark:bg-elementDark">
           <FontAwesomeIcon icon={faArrowLeftLong} />
           <Link to="/">Back</Link>
         </div>
-        {loading && <p className="text-textIfLight mt-14">Loading...</p>}
+        {loading && <p className="mt-14 dark:text-textIfDark">Loading...</p>}
         {datas.map(data => {
           const { flags, name, population, region, subregion, capital, tld, currencies, languages, borders } = data;
 
@@ -51,41 +51,41 @@ const Detail = () => {
                   <h1 className="text-xl font-bold lg:text-3xl">{name.common}</h1>
                 </div>
 
-                <div className="flex flex-col gap-y-10 lg:flex-row lg:justify-between">
-                  <div className="space-y-2 lg:text-lg text-textIfLightDetail lg:space-y-3">
+                <div className="flex flex-col gap-y-10 lg:flex-row lg:justify-between text-textIfLightDetail dark:text-textIfDark">
+                  <div className="space-y-2 lg:text-lg lg:space-y-3">
                     <p>
-                      <span className="text-textIfLight font-semibold">Native Name: </span>
+                      <span className="font-semibold">Native Name: </span>
                       {name.common}
                     </p>
                     <p>
-                      <span className="text-textIfLigh font-semibold">Population: </span>
+                      <span className="font-semibold">Population: </span>
                       {population}
                     </p>
                     <p>
-                      <span className="text-textIfLight font-semibold">Region: </span>
+                      <span className="font-semibold">Region: </span>
                       {region}
                     </p>
                     <p>
-                      <span className="text-textIfLight font-semibold">Sub Region: </span>
+                      <span className="font-semibold">Sub Region: </span>
                       {subregion}
                     </p>
                     <p>
-                      <span className="text-textIfLight font-semibold">Capital: </span>
+                      <span className="font-semibold">Capital: </span>
                       {capital}
                     </p>
                   </div>
 
                   <div className="space-y-2 ttext-textIfLightDetail lg:text-lg lg:space-y-3">
                     <p>
-                      <span className="text-textIfLight font-semibold">Top Level Domain: </span>
+                      <span className="font-semibold">Top Level Domain: </span>
                       {tld}
                     </p>
                     <p>
-                      <span className="text-textIfLight font-semibold">Currencies: </span>
+                      <span className="font-semibold">Currencies: </span>
                       {Object.keys(currencies)}
                     </p>
                     <p>
-                      <span className="text-textIfLight font-semibold">Languages: </span>
+                      <span className="font-semibold">Languages: </span>
                       {`${Object.values(languages)},`}
                     </p>
                   </div>
@@ -97,7 +97,7 @@ const Detail = () => {
                     <div className="flex flex-wrap gap-2">
                       {borders.map((border, index) => {
                         return (
-                          <div key={index} className="py-2 px-8 font bg-white rounded-md shadow-lg lg:py-1">
+                          <div key={index} className="py-2 px-8 font bg-white rounded-md shadow-lg lg:py-1 dark:bg-elementDark dark:text-textIfDark">
                             <p>{border}</p>
                           </div>
                         );

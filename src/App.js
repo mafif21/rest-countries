@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar";
 
 const App = () => {
   return (
-    <div className="bg-bgLight text-textIfLight">
+    <div className="text-textIfLight dark:text-textIfDark">
       <header>
         <Navbar />
       </header>

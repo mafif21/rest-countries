@@ -59,11 +59,16 @@ const Data = () => {
     <section>
       <div className="px-5 mt-5 lg:px-20 flex flex-col lg:flex-row lg:items-center">
         <div className="w-full">
-          <input type="text" placeholder="Search for a country..." className="w-full py-3.5 px-3 shadow-md rounded-md placeholder:text-xs text-sm outline-none lg:w-1/2" onChange={e => setSearch(e.target.value)} />
+          <input
+            type="text"
+            placeholder="Search for a country..."
+            className="w-full py-3.5 px-3 shadow-md rounded-md placeholder:text-xs text-sm outline-none lg:w-1/2 dark:bg-elementDark dark:text-textIfDark"
+            onChange={e => setSearch(e.target.value)}
+          />
         </div>
 
         <div className="lg:w-1/5">
-          <select className="w-1/2 py-4 px-3 font-semibold text-xs rounded-md bg-white shadow-md mt-10 lg:mt-0 lg:w-full" ref={selectRef} onChange={() => selectRegion()}>
+          <select className="w-1/2 py-4 px-3 font-semibold text-xs rounded-md bg-white shadow-md mt-10 lg:mt-0 lg:w-full dark:bg-elementDark dark:text-textIfDark" ref={selectRef} onChange={() => selectRegion()}>
             <option value="">Filter by Region</option>
             <option value="Africa">Africa</option>
             <option value="America">America</option>

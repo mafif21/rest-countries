@@ -5,14 +5,11 @@ import { useState } from "react";
 const Navbar = () => {
   const [dark, setDark] = useState(false);
 
+  dark ? (document.body.style.backgroundColor = "#202D36") : (document.body.style.backgroundColor = "#FAFAFA");
+
   const themeHandler = () => {
     document.documentElement.classList.toggle("dark");
-    document.body.style.backgroundColor = "#FAFAFA";
-
-    if (document.documentElement.classList.contains("dark")) {
-      document.body.style.backgroundColor = "#202D36";
-      setDark(!dark);
-    }
+    setDark(!dark);
   };
 
   return (

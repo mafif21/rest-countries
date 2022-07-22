@@ -92,7 +92,7 @@ const Detail = () => {
                 </div>
 
                 {"borders" in data && (
-                  <div className="my-10 gap-y-4 flex flex-col lg:flex-row lg:items-center lg:gap-x-5 lg:text-lg">
+                  <div className="my-10 gap-y-4 flex flex-col lg:flex-row lg:items-start lg:gap-x-5 lg:text-lg">
                     <h2>Border Countries:</h2>
                     <div className="flex flex-wrap gap-2">
                       {borders.map((border, index) => {

@@ -13,7 +13,7 @@ const Card = props => {
 
         return (
           <div key={country.cca2} className="mb-10 rounded-md overflow-hidden w-64 shadow-lg bg-white lg:w-64 lg:mb-12 dark:bg-elementDark dark:text-textIfDark">
-            <Link to={`detail/${name.common}`}>
+            <Link to={`detail/${country.cca3}`}>
               <div className="h-40">
                 <img src={flags.png} alt={name.common} className="h-full w-full object-cover" />
               </div>

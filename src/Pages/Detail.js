@@ -5,7 +5,7 @@ import { faArrowLeftLong } from "@fortawesome/free-solid-svg-icons";
 
 const Detail = () => {
   const param = useParams();
-  const endPoint = "https://restcountries.com/v3.1/name/";
+  const endPoint = "https://restcountries.com/v3.1/alpha/";
   const [datas, setDatas] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -15,7 +15,7 @@ const Detail = () => {
 
   const fetchData = async url => {
     try {
-      const response = await fetch(`${url}${param.name}`);
+      const response = await fetch(`${url}${param.id}`);
       const data = await response.json();
 
       setDatas(data);
@@ -39,6 +39,7 @@ const Detail = () => {
         {loading && <p className="mt-14 dark:text-textIfDark">Loading...</p>}
         {datas.map(data => {
           const { flags, name, population, region, subregion, capital, tld, currencies, languages, borders } = data;
+
           var reverse = population.toString().split("").reverse().join(""),
             thousand = reverse.match(/\d{1,3}/g);
           thousand = thousand.join(".").split("").reverse().join("");

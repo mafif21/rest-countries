@@ -6,6 +6,11 @@ const Card = props => {
       {props.loading && <p>Loading...</p>}
       {props.countries.map(country => {
         const { name, flags, population, region, capital } = country;
+
+        var reverse = population.toString().split("").reverse().join(""),
+          thousand = reverse.match(/\d{1,3}/g);
+        thousand = thousand.join(".").split("").reverse().join("");
+
         return (
           <div key={country.cca2} className="mb-10 rounded-md overflow-hidden w-64 shadow-lg bg-white lg:w-64 lg:mb-12 dark:bg-elementDark dark:text-textIfDark">
             <Link to={`detail/${name.common}`}>
@@ -20,7 +25,7 @@ const Card = props => {
 
                 <div className="my-3">
                   <p className="mb-1 font-thin">
-                    <span className="font-semibold">Population:</span> {population}
+                    <span className="font-semibold">Population:</span> {thousand}
                   </p>
                   <p className="mb-1 font-thin">
                     <span className="font-semibold">Region:</span> {region}

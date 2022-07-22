@@ -39,6 +39,9 @@ const Detail = () => {
         {loading && <p className="mt-14 dark:text-textIfDark">Loading...</p>}
         {datas.map(data => {
           const { flags, name, population, region, subregion, capital, tld, currencies, languages, borders } = data;
+          var reverse = population.toString().split("").reverse().join(""),
+            thousand = reverse.match(/\d{1,3}/g);
+          thousand = thousand.join(".").split("").reverse().join("");
 
           return (
             <div key={data.cca2} className="mt-14 mb-16 grid grid-cols-1 lg:grid-cols-2 lg:mb-16">
@@ -59,7 +62,7 @@ const Detail = () => {
                     </p>
                     <p>
                       <span className="font-semibold">Population: </span>
-                      {population}
+                      {thousand}
                     </p>
                     <p>
                       <span className="font-semibold">Region: </span>

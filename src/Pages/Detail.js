@@ -11,6 +11,7 @@ const Detail = () => {
 
   useEffect(() => {
     fetchData(endPoint);
+    document.title = "Detail";
   }, []);
 
   const fetchData = async url => {

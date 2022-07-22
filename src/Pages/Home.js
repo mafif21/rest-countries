@@ -1,7 +1,10 @@
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import Data from "../components/Data";
 
 const Home = () => {
+  useEffect(() => {
+    document.title = "Home";
+  });
   return (
     <Fragment>
       <main>
